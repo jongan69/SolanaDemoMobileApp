@@ -5,11 +5,8 @@ import { useWallet } from '@/contexts/WalletContext';
 import { useStore } from '@/store';
 import { createTransferTransaction } from '@/utils/transactions';
 import { PublicKey } from '@solana/web3.js';
-import { useTheme } from '@/contexts/ThemeContext';
-
 
 const HomeScreen = () => {
-  const { colors } = useTheme();
   const { walletType, publicKey, logout } = useWallet();
   const signTransaction = useStore(state => state.signTransaction)
   const exportKey = useStore(state => state.exportPrivateKey)
